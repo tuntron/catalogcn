@@ -8,6 +8,7 @@ node:
   log_opt:
     max-size: '50m'
   tty: true
+  privileged:true
   cpu_shares: 512
   mem_limit: 268435456
   expose:
