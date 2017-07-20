@@ -1,4 +1,4 @@
-nodejs:
+node:
   image: registry.cn-hangzhou.aliyuncs.com/karelcc/mynode
   command:
   - npm i
