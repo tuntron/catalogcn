@@ -21,9 +21,3 @@
     required: true
     default: index.js
     type: string
-  - variable: NODE_GLOBAL_DIR
-    description: 'NPM global prefix directory'
-    label: 'Npm directory:'
-    required: true
-    default: /var/node
-    type: string

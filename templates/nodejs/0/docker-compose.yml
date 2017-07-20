@@ -1,16 +1,17 @@
-node:
-  image: vibioh/node:latest
-  command: node ${NODE_COMMAND}
+nodejs:
+  image: registry.cn-hangzhou.aliyuncs.com/karelcc/mynode
+  command:
+  - npm i
+  - node ${NODE_COMMAND}
   working_dir: /usr/src
   volumes:
   - ${WORKING_DIR}:/usr/src
-  - ${NODE_GLOBAL_DIR}:/usr/node
   log_opt:
     max-size: '50m'
   tty: true
-  privileged:true
+  privileged: true
   cpu_shares: 512
   mem_limit: 268435456
+  network_mode: bridge
   expose:
-  - ${NODE_PORT}/tcp
-
+  - ${NODE_PORT} /tcp
