@@ -1,17 +1,17 @@
 node:
   image: registry.cn-hangzhou.aliyuncs.com/karelcc/mynode
-  command:
-  - npm i
-  - node ${NODE_COMMAND}
+  command: node ${NODE_COMMAND}
   working_dir: /usr/src
   volumes:
-  - ${WORKING_DIR}:/usr/src
+    - ${WORKING_DIR}:/usr/src
   log_opt:
     max-size: '50m'
   tty: true
   privileged: true
   cpu_shares: 512
   mem_limit: 268435456
-  network_mode: bridge
-  expose:
-  - ${NODE_PORT} /tcp
+ labels:
+    io.rancher.container.hostname_override: container_name
+    traefik.port: '${NODE_PORT}'
+    traefik.frontend.rule: 'Host'
+    traefik.frontend.passHostHeader: 'true'
