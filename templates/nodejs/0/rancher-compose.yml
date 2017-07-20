@@ -21,3 +21,4 @@
     required: true
     default: index.js
     type: string
+

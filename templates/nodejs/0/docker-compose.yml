@@ -6,11 +6,13 @@ node:
     - ${WORKING_DIR}:/usr/src
   log_opt:
     max-size: '50m'
+  ports:
+    - ${NODE_PORT}/tcp
   tty: true
   privileged: true
   cpu_shares: 512
   mem_limit: 268435456
- labels:
+  labels:
     io.rancher.container.hostname_override: container_name
     traefik.port: '${NODE_PORT}'
     traefik.frontend.rule: 'Host'
