@@ -3,12 +3,6 @@
   version: latest
   uuid: nodejs-0
   questions:
-  - variable: NODE_PORT
-    description: 'Node port for eggjs'
-    label: 'Node port:'
-    required: true
-    default: 7001
-    type: int
   - variable: WORKING_DIR
     description: 'Working directory path'
     label: 'Working dir:'
@@ -21,30 +15,3 @@
     required: true
     default: index.js
     type: string
-  - variable: LBHOST
-     description: '负载均衡地址'
-     label: 'LBHOST:'
-     required: true
-     default: 127.0.0.1
-     type: string
-nodejslbs:
-    scale: 1
-    start_on_create: true
-    lb_config:
-      certs: []
-      port_rules:
-      - hostname: ${LBHOST}
-        priority: 1
-        protocol: http
-        service: node
-        source_port: ${NODE_PORT}
-        target_port: 7001
-    health_check:
-      healthy_threshold: 2
-      response_timeout: 2000
-      port: ${NODE_PORT}
-      unhealthy_threshold: 3
-      initializing_timeout: 60000
-      interval: 2000
-      reinitializing_timeout: 60000
-

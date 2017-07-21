@@ -11,11 +11,3 @@ node:
   mem_limit: 268435456
   labels:
     io.rancher.container.hostname_override: container_name
-
-nodejslbs:
-  image: rancher/lb-service-haproxy:v0.7.5
-  ports:
-    - ${NODE_PORT}:${NODE_PORT}/tcp
-  labels:
-      io.rancher.container.agent.role: environmentAdmin
-      io.rancher.container.create_agent: 'true'
