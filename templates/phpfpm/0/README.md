@@ -2,6 +2,8 @@
 
 This template creates a PHPFPM.
 
+php7.0
+
 ## Usage
 
 优化版
