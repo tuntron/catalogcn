@@ -1,0 +1,11 @@
+.catalog:
+  name: PhpFpm
+  version: latest
+  uuid: phpfpm-0
+  questions:
+  - variable: WORKING_DIR
+    description: 'Working directory path'
+    label: 'Working dir:'
+    required: true
+    default: /var/www/
+    type: string

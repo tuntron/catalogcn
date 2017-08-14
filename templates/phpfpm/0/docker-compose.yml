@@ -1,0 +1,13 @@
+phpfpm:
+  image: registry.cn-hangzhou.aliyuncs.com/karelcc/myphp-fpm
+  command: node ${NODE_COMMAND}
+  working_dir: /var/www
+  volumes:
+    - ${WORKING_DIR}:/var/www
+  log_opt:
+    max-size: '50m'
+  tty: true
+  cpu_shares: 512
+  mem_limit: 268435456
+  labels:
+    io.rancher.container.hostname_override: container_name
