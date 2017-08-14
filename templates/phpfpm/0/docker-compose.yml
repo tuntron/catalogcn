@@ -1,6 +1,6 @@
 phpfpm:
   image: registry.cn-hangzhou.aliyuncs.com/karelcc/myphp-fpm
-  command: node ${NODE_COMMAND}
+  command: php-fpm
   working_dir: /var/www
   volumes:
     - ${WORKING_DIR}:/var/www
